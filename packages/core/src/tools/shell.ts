@@ -16,14 +16,12 @@ import type {
   ToolResult,
   ToolCallConfirmationDetails,
   ToolExecuteConfirmationDetails,
-} from './tools.js';
-import {
+
   BaseDeclarativeTool,
   BaseToolInvocation,
   ToolConfirmationOutcome,
   Kind,
-  type PolicyUpdateOptions,
-} from './tools.js';
+  type PolicyUpdateOptions} from './tools.js';
 
 import { getErrorMessage } from '../utils/errors.js';
 import { summarizeToolOutput } from '../utils/summarizer.js';
@@ -124,9 +122,9 @@ export class ShellToolInvocation extends BaseToolInvocation<
         rootCommandDisplay += ', redirection';
       }
     } else {
-      rootCommandDisplay = parsed.details
-        .map((detail) => detail.name)
-        .join(', ');
+      rootCommandDisplay = [
+        ...new Set(parsed.details.map((detail) => detail.name)),
+      ].join(', ');
     }
 
     const rootCommands = [...new Set(getCommandRoots(command))];
