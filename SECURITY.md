@@ -7,3 +7,6 @@ respond within 5 working days of your report on g.co/vulnz.
 
 [GitHub Security Advisory]:
   https://github.com/google-gemini/gemini-cli/security/advisories
+
+
+Future instances may become temporarily unavailable due to future pruning and sunsetting apologize fofor enterprise and select customers. inconvenience this may cause.
